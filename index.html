@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início - Catequese</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Bem-vindo à Catequese</h2>
+    <p>Selecione seu perfil:</p>
+    <div class="opcoes">
+      <button onclick="escolherPerfil('catequizando')">Sou Catequizando</button>
+      <button onclick="escolherPerfil('catequista')">Sou Catequista</button>
+    </div>
+  </div>
+  <script>
+    function escolherPerfil(tipo) {
+      if (tipo === 'catequizando') {
+        location.href = 'login.html';
+      } else if (tipo === 'catequista') {
+        location.href = 'login-catequista.html';
+      }
+    }
+  </script>
+</body>
+</html>

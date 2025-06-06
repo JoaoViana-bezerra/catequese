@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login Catequista</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login Catequista</h2>
+    <input type="text" id="nomeCatequista" placeholder="Digite seu nome">
+    <input type="password" id="senhaCatequista" placeholder="Digite a senha">
+    <button onclick="loginCatequista()">Entrar</button>
+    <p id="erro" class="erro"></p>
+  </div>
+  <script>
+    function loginCatequista() {
+      const nome = document.getElementById('nomeCatequista').value.trim().toLowerCase();
+      const senha = document.getElementById('senhaCatequista').value.trim();
+      const erro = document.getElementById('erro');
+      const nomesAutorizados = ['joão', 'maria'];
+      const senhaCorreta = 'catequista@123';
+
+      if (!nomesAutorizados.includes(nome)) {
+        erro.textContent = 'Nome não autorizado.';
+        return;
+      }
+      if (senha !== senhaCorreta) {
+        erro.textContent = 'Senha incorreta.';
+        return;
+      }
+      localStorage.setItem('nivel', 'catequista');
+      localStorage.setItem('nome', nome);
+      location.href = 'presencas.html';
+    }
+  </script>
+</body>
+</html>
